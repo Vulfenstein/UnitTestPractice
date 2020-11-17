@@ -23,6 +23,13 @@ TEST(PracticeTest, not_palindrome)
     ASSERT_FALSE(actual);
 }
 
+TEST(PracticeTest, string_of_symbols)
+{
+    Practice obj;
+    bool actual = obj.isPalindrome("$6!~");
+    ASSERT_FALSE(actual);
+}
+
 TEST(PracticeTest, simple_palindrome)
 {
     Practice obj;
@@ -33,8 +40,8 @@ TEST(PracticeTest, simple_palindrome)
 TEST(PracticeTest, complex_palindrome)
 {
     Practice obj;
-    bool actual = obj.isPalindrome("[&b");
-    ASSERT_FALSE(actual);
+    bool actual = obj.isPalindrome("ASantaLivedAsaDevilAtNASA");
+    ASSERT_TRUE(actual);
 }
 
 TEST(PracticeTest, empty_string)
@@ -53,9 +60,9 @@ TEST(PracticeTest, low_mid_high)
 	int val1 = 20;
 	int val2 = 300;
     obj.sortDescending(val0, val1, val2);
-    EXPECT_GT(val0, val1);
-	EXPECT_GT(val0, val2);
-	EXPECT_GT(val1, val2);
+    ASSERT_EQ(val0, 300);
+	ASSERT_EQ(val1, 20);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, low_high_mid)
@@ -65,9 +72,9 @@ TEST(PracticeTest, low_high_mid)
 	int val1 = 300;
 	int val2 = 20;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GT(val0, val1);
-	ASSERT_GT(val0, val2);
-	ASSERT_GT(val1, val2);
+    ASSERT_EQ(val0, 300);
+	ASSERT_EQ(val1, 20);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, mid_low_high)
@@ -77,9 +84,9 @@ TEST(PracticeTest, mid_low_high)
 	int val1 = 1;
 	int val2 = 300;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GT(val0, val1);
-	ASSERT_GT(val0, val2);
-	ASSERT_GT(val1, val2);
+    ASSERT_EQ(val0, 300);
+	ASSERT_EQ(val1, 20);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, mid_high_low)
@@ -89,9 +96,9 @@ TEST(PracticeTest, mid_high_low)
 	int val1 = 300;
 	int val2 = 1;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GT(val0, val1);
-	ASSERT_GT(val0, val2);
-	ASSERT_GT(val1, val2);
+    ASSERT_EQ(val0, 300);
+	ASSERT_EQ(val1, 20);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, high_low_mid)
@@ -101,9 +108,9 @@ TEST(PracticeTest, high_low_mid)
 	int val1 = 1;
 	int val2 = 20;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GT(val0, val1);
-	ASSERT_GT(val0, val2);
-	ASSERT_GT(val1, val2);
+    ASSERT_EQ(val0, 300);
+	ASSERT_EQ(val1, 20);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, high_mid_low)
@@ -113,9 +120,9 @@ TEST(PracticeTest, high_mid_low)
 	int val1 = 20;
 	int val2 = 1;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GT(val0, val1);
-	ASSERT_GT(val0, val2);
-	ASSERT_GT(val1, val2);
+    ASSERT_EQ(val0, 300);
+	ASSERT_EQ(val1, 20);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, three_same_values)
@@ -125,9 +132,9 @@ TEST(PracticeTest, three_same_values)
 	int val1 = 1;
 	int val2 = 1;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GE(val0, val1);
-	ASSERT_GE(val0, val2);
-	ASSERT_GE(val1, val2);
+    ASSERT_EQ(val0, 1);
+	ASSERT_EQ(val1, 1);
+	ASSERT_EQ(val2, 1);
 }
 
 TEST(PracticeTest, two_same_values)
@@ -137,7 +144,7 @@ TEST(PracticeTest, two_same_values)
 	int val1 = 1;
 	int val2 = 3;
     obj.sortDescending(val0, val1, val2);
-    ASSERT_GT(val0, val1);
-	ASSERT_GT(val0, val2);
-	ASSERT_GE(val1, val2);
+    ASSERT_EQ(val0, 3);
+	ASSERT_EQ(val1, 1);
+	ASSERT_EQ(val2, 1);
 }
